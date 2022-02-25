@@ -1,0 +1,92 @@
+//滚动条样式
+@import "../comm.less";
+
+.scrollbar(@width: 2px) {
+  &::-webkit-scrollbar {
+    width: @width;
+    height: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px rgb(185, 185, 185);
+    background: #c7c5c8;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 0;
+    background: #ddd;
+  }
+}
+
+.main {
+  .scrollbar;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px !important;
+  background: #fff !important;
+
+  .side-header {
+    display: flex;
+    align-items: center;
+
+    .trigger {
+      display: flex;
+      font-size: 20px;
+    }
+
+    .side-title {
+      display: flex;
+      padding: 0 10px;
+      font-size: 15px;
+      color: @breadcrumb;
+    }
+  }
+
+  .menu-list {
+    display: flex;
+    flex: 1;
+  }
+}
+
+.logo {
+  display: flex;
+  height: 32px;
+  margin: 16px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.site-layout-background {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin: 24px 16px 5px;
+  minHeight: 280px;
+
+}
+
+.content-render {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.ant-tabs {
+  //height: auto !important;
+  //background: #fff;
+  .ant-tabs-nav {
+    margin-bottom: 5px !important;
+  }
+}
+
+.ant-tabs-nav-wrap::after {
+  opacity: 0 !important;
+}
+
+.ant-tabs-content-holder {
+  display: none;
+}

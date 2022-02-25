@@ -1,0 +1,67 @@
+{
+  "compilerOptions": {
+	"baseUrl": "./",
+	"target": "ESNext",
+	"useDefineForClassFields": true,
+	"lib": [
+	  "DOM",
+	  "DOM.Iterable",
+	  "ESNext"
+	],
+	"allowJs": false,
+	"skipLibCheck": false,
+	"esModuleInterop": false,
+	"allowSyntheticDefaultImports": true,
+	"strict": true,
+	"forceConsistentCasingInFileNames": true,
+	"module": "ESNext",
+	"moduleResolution": "Node",
+	"resolveJsonModule": true,
+	"isolatedModules": true,
+	"noEmit": true,
+	"jsx": "react",
+	"experimentalDecorators": true,
+	"paths": {
+	  "@/*": [
+		"./src/*"
+	  ],
+	  "@/api/*": [
+		"./src/api/*"
+	  ],
+	  "@/assets/*": [
+		"./src/assets/*"
+	  ],
+	  "@/components/*": [
+		"./src/components/*"
+	  ],
+	  "@/config/*": [
+		"./src/config/*"
+	  ],
+	  "@/hooks/*": [
+		"./src/hooks/*"
+	  ],
+	  "@/lib/*": [
+		"./src/lib/*"
+	  ],
+	  "@/pages/*": [
+		"./src/pages/*"
+	  ],
+	  "@/plugins/*": [
+		"./src/plugins/*"
+	  ],
+	  "@/routes/*": [
+		"./src/routes/*"
+	  ],
+	  "@/store/*": [
+		"./src/store/*"
+	  ],
+	  "@/styles/*": [
+		"./src/styles/*"
+	  ]
+	}
+  },
+  "include": [
+	"./src",
+	"./vite.config.ts"
+  ]
+}

@@ -1,0 +1,31 @@
+@lessCaptionColor: #333;
+@lessRegisterHit: #a3a3a3;
+@lessSearch: 10px;
+@breadcrumb: #515a6e;
+.section-content{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.comm-button {
+  display: flex;
+  font-size: .18rem;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, #E02020 0%, #FA6400 100%);
+  border-radius: 4px;
+}
+
+.site-layout-content {
+  display: flex;
+  background: #fff;
+  padding: @lessSearch 5px 0 0;
+}
+
+.search-content {
+  .site-layout-content;
+  flex-direction: column;
+  padding: @lessSearch;
+  margin-top: @lessSearch;
+}

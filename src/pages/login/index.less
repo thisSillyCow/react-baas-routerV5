@@ -1,0 +1,114 @@
+@import "../../styles/comm.less";
+
+.login {
+  display: flex;
+  flex: 1;
+}
+
+.ax-footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  max-height: 500px;
+}
+
+.login-content {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  display: flex;
+  z-index: 1;
+  flex-direction: column;
+
+  .content-log {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+
+    .content-login {
+      width: 9.5rem;
+      max-width: 650px;
+      min-width: 400px;
+    }
+  }
+}
+
+.user-login {
+  display: flex;
+  width: 400px;
+  height: 579px;
+  flex-direction: column;
+  background: #FFFFFF;
+  align-items: center;
+  box-shadow: 0px 5px 20px 10px rgba(224, 32, 32, 0.05);
+  border: 1px solid rgba(224, 32, 32, 0.1);
+  border-radius: 8px;
+
+  .logo-head {
+    padding-top: 38px;
+    width: 161px;
+  }
+
+  .login-info {
+    margin: 0 50px;
+    width: 3.3rem;
+    min-width: 280px;
+    max-width: 500px;
+
+    .login-info-list {
+      display: flex;
+      align-items: center;
+      height: .5rem;
+      min-height: 50px;
+      margin-top: .3rem;
+      max-height: 60px;
+      border-bottom: 1px solid #DCDCDC;
+      font-size: 14px;
+
+      .account-name {
+        display: flex;
+        width: 60px;
+        font-weight: bold;
+        color: @lessCaptionColor;
+      }
+
+      .account-info {
+        display: flex;
+        flex: 1;
+      }
+      .login-code{
+        width: 1.5rem;
+        min-width: 50px;
+      }
+    }
+
+    .register {
+      .comm-button;
+      width: 100%;
+      height: 40px;
+      margin-top: 76px;
+      cursor: pointer;
+    }
+
+    .register-hit {
+      display: flex;
+      color: @lessRegisterHit;
+      justify-content: center;
+      font-size: 12px;
+      margin-top: 10px;
+    }
+  }
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  margin-bottom: .2rem;
+}
