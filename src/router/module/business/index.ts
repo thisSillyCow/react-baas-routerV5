@@ -1,6 +1,6 @@
 import {Information} from "./information"
 import {UserManagement} from "./user-management"
-import {Commerce} from "./commerce"
+// import {Commerce} from "./commerce"
 import Main from "@/components/main";
 import {RouteConfig} from "react-router-config";
 import HomePage from "@/pages/business/home";
@@ -44,7 +44,7 @@ export const Business: RouteConfig[] = [
 			...Home,
 			...Information,
 			...UserManagement,
-			...Commerce,
+			// ...Commerce,
 		],
 	}
 ]

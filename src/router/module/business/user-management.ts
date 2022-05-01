@@ -1,6 +1,11 @@
 import {RouteConfig} from 'react-router-config';
+import {RouterPath, BusinessName} from "@/lib/local"
 import Main from '@/components/main';
 import  UserList from "@/pages/business/user-management/user-list"
+import  UserPractice from "@/pages/business/user-management/user-practice"
+const pName = BusinessName.PersonnelName
+const path = RouterPath.Business;
+const personnel = `${path}/personnel`
 export  const  UserManagement:RouteConfig[] = [
 	{
 		name: "UserManagement",
@@ -8,7 +13,7 @@ export  const  UserManagement:RouteConfig[] = [
 		// @ts-ignore
 		component: Main,
 		meta: {
-			title: "用户管理",
+			title: pName.title,
 			icon: "userManagement-icon.png",
 		},
 		routes: [
@@ -20,7 +25,19 @@ export  const  UserManagement:RouteConfig[] = [
 				permissions: ['user', 'admin'], // 当前登录权限必须 user或admin 才可以访问
 				component:UserList,
 				meta: {
-					title: "用户列表",
+					title:  pName.userTitle,
+					
+				},
+			},
+			{
+				name:"UserPractice",
+				path: '/business/user-management/user-practice',
+				// exact: true,
+				requiresAuth: true,//是否需要登录
+				permissions: ['user', 'admin'], // 当前登录权限必须 user或admin 才可以访问
+				component:UserPractice,
+				meta: {
+					title:  pName.practiceTitle,
 					
 				},
 			},

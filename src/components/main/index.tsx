@@ -6,11 +6,9 @@ import Headers from "./components/header"
 import SideMenu from "./components/side-menu"
 import "@/styles/components/mian.less"
 import {Layout, Tabs} from 'antd';
-
 const {Content,} = Layout;
 const {TabPane} = Tabs;
 import {MainProps, MainState, TabsMeta} from "@/type/components/main";
-import CompanyList from "@/pages/business/information/company-list";
 
 @inject(({store}) => (
 	{

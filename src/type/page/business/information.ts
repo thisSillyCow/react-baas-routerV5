@@ -12,7 +12,7 @@ export interface  CompanyState {
 	modalDetails:ModalDetails,
 }
 
-export  interface CompanyProps  {
+export  interface CompanyProps    {
 	count:string,
 	increase:Function,
 }

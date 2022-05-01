@@ -11,6 +11,7 @@ import {withRouter} from 'react-router-dom'
 import {InputProps, InputState, rSearch} from "@/type/components/customInput"
 import {EventReset, EventSearch, UserVerify} from "@/lib/local"
 import {companyList} from "@/lib/temporary"
+
 import Util from "@/lib/util"
 import "./index.less"
 
@@ -18,6 +19,7 @@ const {Option} = Select;
 
 class CustomInput extends React.Component<InputProps, InputState> {
 	public eventEmitter: EventEmitter | undefined;
+	
 	public constructor(props: InputProps) {
 		super(props);
 		this.state = {
@@ -30,7 +32,7 @@ class CustomInput extends React.Component<InputProps, InputState> {
 	public componentDidMount(): void {
 		const pathname = this.props.location.pathname
 		if (!this.eventEmitter) {
-			this.eventEmitter = emitter.addListener(EventReset,this.disposeReset );
+			this.eventEmitter = emitter.addListener(EventReset, this.disposeReset);
 			
 		}
 		this.setState({
@@ -41,6 +43,7 @@ class CustomInput extends React.Component<InputProps, InputState> {
 	public componentWillUnmount(): void {
 		this.eventEmitter && emitter.removeListener(EventReset, this.disposeReset);
 	}
+	
 	public placeholderMsg(): string {
 		let msg: string;
 		const pleaseInput: string[] = ["text",];
@@ -55,16 +58,18 @@ class CustomInput extends React.Component<InputProps, InputState> {
 	
 	public loginVerify(event: React.ChangeEvent<HTMLInputElement>, eType: string): void {
 		let vType: string | undefined = "";
+		console.log(this.state)
 		switch (eType) {
 			case "accounts":
 				vType = "vAccount"
 				break;
 		}
 		let searchName: string = Util.verifyType(event.target.value, vType);
-		this.valueListener(searchName)
 		this.setState({
 			searchValue: searchName
 		})
+		
+		this.valueListener(searchName)
 	}
 	
 	public valueListener(vMsg: string): void {
@@ -74,8 +79,8 @@ class CustomInput extends React.Component<InputProps, InputState> {
 		emitter?.emit(EventSearch, JSON.stringify(param))
 	}
 	
-	public disposeReset(rMsg:string): void {
-		const rEvent:rSearch = JSON.parse(rMsg)
+	public disposeReset(rMsg: string): void {
+		const rEvent: rSearch = JSON.parse(rMsg)
 		const {pathName,} = this.state
 		const pName = rEvent?.pathName;
 		const sMsg = rEvent?.sMsg;
@@ -83,12 +88,15 @@ class CustomInput extends React.Component<InputProps, InputState> {
 			this.setState({searchValue: ""})
 		}
 	}
-	public onChange(value: number):void{
+	
+	public onChange(value: number): void {
 		console.log(`selected ${value}`);
 	}
+	
 	render() {
 		const {searchValue} = this.state
 		const {placeType,} = this.props
+		console.log("searchValue: "+searchValue)
 		return (
 			<div className="custom-input">
 				{placeType === "text" &&
@@ -102,14 +110,14 @@ class CustomInput extends React.Component<InputProps, InputState> {
                         optionFilterProp="children" className="inputText"
                         onChange={this.onChange}
                         filterOption={(input, option) =>
-	                        option?.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                        }
+							option?.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+						}
                     >
-	                    {
-		                    companyList.map((item,index)=>{
+						{
+							companyList.map((item, index) => {
 								return <Option label={item} value={item.id} key={index}>{item.companyName}</Option>
-		                    })
-	                    }
+							})
+						}
                     </Select>
 				}
 			</div>

@@ -20,3 +20,19 @@ export interface APP_MODEL_NAME {
 	titleName: string,
 	sideSelected:string,
 }
+
+interface Information {
+	title:string;
+	rTitle:string;
+	infoTitle:string;
+	userTitle:string;
+}
+interface  Personnel{
+	title:string;
+	userTitle:string;
+	practiceTitle:string;
+}
+export interface BUSINESS_NAME {
+	InformationName:Information;
+	PersonnelName:Personnel;
+}

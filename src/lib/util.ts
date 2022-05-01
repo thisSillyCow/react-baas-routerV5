@@ -64,7 +64,8 @@ const Util = {
 		}
 		verify = verify.replace(reg, "");
 		return verify;
-	}, /***
+	},
+	/***
 	 * @description 验证输入正则
 	 * @param verify  {string} 输入的字符串
 	 * @param vType  {string} 需要验证的类型

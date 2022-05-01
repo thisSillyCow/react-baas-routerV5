@@ -31,3 +31,21 @@ export enum ModalInfo{
 	CONFIRM_NAME="确定",
 	MODAL_TITLE="温馨提示",
 }
+import {BUSINESS_NAME} from "@/type/lib/local"
+export  enum RouterPath{
+	Business="/business",
+}
+
+export  const BusinessName:BUSINESS_NAME={
+	InformationName:{
+		title:"信息管理",
+		rTitle:"二级列表",
+		infoTitle:"信息发布",
+		userTitle:"用户信息列表"
+	},
+	PersonnelName:{
+		title:"人员管理",
+		userTitle:"用户列表",
+		practiceTitle:"人员操作",
+	},
+}

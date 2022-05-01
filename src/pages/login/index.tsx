@@ -9,7 +9,6 @@ import LoginApi from "@/api/login"
 import {LoginState} from "@/type/page/login"
 import Util from "@/lib/util"
 import { withRouter } from 'react-router-dom'
-
 class Login extends React.Component<any, LoginState> {
 	public constructor(props: any) {
 		super(props);
@@ -65,7 +64,7 @@ class Login extends React.Component<any, LoginState> {
 		this.props.history.push({pathname: "/business/home"});
 	}
 	public LoginPage(): ReactNode {
-		let {loginPwd, accounts, code,loading,vCode} = this.state
+		let {loginPwd, accounts, code,loading,vCode,} = this.state
 		return (
 			<div className="user-login">
 				<img src={LogoHeadPic} className="logo-head" alt=""/>
