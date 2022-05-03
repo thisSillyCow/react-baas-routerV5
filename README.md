@@ -8,7 +8,6 @@ https://github.com/lanistor/react-keeper
 - Vite + React + React-router +  Ant
 - 兄弟通讯：events
 - echarts-for-react:https://git.hust.cc/echarts-for-react/
-- react-keep-alive：https://www.npmjs.com/package/react-keep-alive
 
 特点:
 - 高质量的代码、代码结构、和代码注释

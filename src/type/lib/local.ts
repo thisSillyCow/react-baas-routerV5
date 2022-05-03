@@ -24,8 +24,12 @@ export interface APP_MODEL_NAME {
 interface Information {
 	title:string;
 	rTitle:string;
+	secondaryTitle:string;
 	infoTitle:string;
 	userTitle:string;
+	consultTitle:string;
+	classifiedTitle:string;
+	journalismTitle:string;
 }
 interface  Personnel{
 	title:string;

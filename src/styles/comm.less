@@ -2,7 +2,13 @@
 @lessRegisterHit: #a3a3a3;
 @lessSearch: 10px;
 @breadcrumb: #515a6e;
+@linkColor:#1890ff;
+@tableAnt:#fbfbfb;
+@editorColor:#ccc;
+@bRadius:4px;
+@submitColor:#FA6400;
 .section-content{
+
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -29,3 +35,38 @@
   padding: @lessSearch;
   margin-top: @lessSearch;
 }
+.upload-pic{
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  .upload-pic-list{
+    display: flex;
+    flex: 1;
+    .upload-pic-file{
+      display: flex;
+      flex: 1;
+      align-items: center;
+    }
+  }
+  .upload-pic-hint{
+    display: flex;
+    align-items: flex-end;
+  }
+  .upload-pic-text{
+    padding: 5px 10px;
+    color:@lessRegisterHit;
+  }
+  .ant-upload-picture-card-wrapper{
+    width: auto !important;
+  }
+}
+  .ant-descriptions-item-content {
+    .ant-select-selector{
+      border: 0 !important;
+    }
+    span input{
+      .ant-select-selector;
+    }
+  }
+

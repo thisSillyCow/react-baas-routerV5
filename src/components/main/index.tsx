@@ -197,18 +197,18 @@ export default class Main extends React.Component<MainProps, MainState> {
 					<Layout className="site-layout">
 						<Headers {...this.props} history={this.props.history} onToggle={this.toggle.bind(this)}
 						         onSuffixChange={(e: string) => this.initSideMenu(e)}/>
-						<Content className="site-layout-background">
-							<Tabs hideAdd tabPosition="top" type="editable-card"
-							      activeKey={activeSideMenu.selectedKey[0]}
-							      onEdit={(targetKey, action) => this.onEditTabs(targetKey, action)}
-							      onChange={(e) => this.onTabsClick(e)}>
-								{tabsList.map((item: TabsMeta, index: number) => {
-									return (
-										<TabPane tab={item.title} key={item.name} closable={index != 0}>
-										</TabPane>
-									)
-								})}
-							</Tabs>
+						<Content className="site-layout-background" >
+							{/*<Tabs hideAdd tabPosition="top" type="editable-card"*/}
+							{/*      activeKey={activeSideMenu.selectedKey[0]}*/}
+							{/*      onEdit={(targetKey, action) => this.onEditTabs(targetKey, action)}*/}
+							{/*      onChange={(e) => this.onTabsClick(e)}>*/}
+							{/*	{tabsList.map((item: TabsMeta, index: number) => {*/}
+							{/*		return (*/}
+							{/*			<TabPane tab={item.title} key={item.name} closable={index != 0}>*/}
+							{/*			</TabPane>*/}
+							{/*		)*/}
+							{/*	})}*/}
+							{/*</Tabs>*/}
 								<div className="content-render">
 									{renderRoutes(route.routes)}
 								</div>

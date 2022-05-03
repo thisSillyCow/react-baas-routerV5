@@ -2,7 +2,6 @@ import { RouteComponentProps} from 'react-router-dom'
 
 export interface InputState {
 	pathName:string,
-	bordered: boolean,
 	searchValue:string,
 }
 
@@ -30,4 +29,23 @@ export  interface dSearch {
 export  interface rSearch {
 	pathName:string,
 	sMsg:string,
+}
+
+interface directives{
+	name:string;
+	value:string;
+	state?:number;
+}
+export  interface tableList {
+	title:string;
+	directives?:directives;
+	action:Function;
+}
+export  interface tableState {
+	dropList:Array<tableList>;
+	tableList:Array<tableList>;
+	dropState:string;
+}
+export  interface tableProps {
+	tableAction:Array<tableList>;
 }

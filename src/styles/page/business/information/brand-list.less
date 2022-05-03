@@ -1,0 +1,44 @@
+@import "../../../comm.less";
+.brand-section{
+  display: flex;
+  flex: 1;
+  background: #fff;
+  flex-direction: column;
+  padding: 20px;
+  overflow: scroll
+}
+.ant-tabs-content-holder{
+  display: inline;
+}
+.editorElem-menu{
+  background:#f1f1f1;
+  border:1px solid @editorColor;
+}
+.editorElem-body{
+  height:300px;
+  border:1px solid @editorColor;
+  borderTop:none
+}
+.editorBusinesses-menu{
+  .editorElem-menu;
+}
+.editorBusinesses-body{
+  .editorElem-body
+}
+.submit-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  align-items: flex-end;
+}
+.submit-brand{
+  width: 80px;
+  height: 30px;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  line-height: 30px;
+  background: @submitColor;
+  border-radius: @bRadius;
+}

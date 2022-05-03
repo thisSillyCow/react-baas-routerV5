@@ -31,7 +31,7 @@ const Util = {
 			const temRoutes = menuListKey.routes;
 			if (temRoutes) {
 				for (const temRoute of temRoutes) {
-					lineRouters = lineRouters.concat(temRoute.routes)
+					lineRouters = lineRouters.concat(temRoute.routes);
 				}
 				// @ts-ignore
 				menuListKey.routes = lineRouters;
@@ -84,6 +84,18 @@ const Util = {
 		}
 		
 		(<iMessage>message)[mType](msg, HintInfo.duration).then();
+	},
+	placeholderName: (name: string,pType:string)=>{
+		let placeholderStr = "请输入";
+		switch (pType) {
+			case "select":
+				placeholderStr = "请选择";
+				break;
+			case "file":
+				placeholderStr = "请上传";
+				break;
+		}
+		return placeholderStr + name;
 	},
 	
 }

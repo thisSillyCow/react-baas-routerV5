@@ -1,11 +1,9 @@
 import {RouteConfig} from 'react-router-config';
-import {RouterPath, BusinessName} from "@/lib/local"
+import { BusinessName} from "@/lib/local"
 import Main from '@/components/main';
 import  UserList from "@/pages/business/user-management/user-list"
 import  UserPractice from "@/pages/business/user-management/user-practice"
 const pName = BusinessName.PersonnelName
-const path = RouterPath.Business;
-const personnel = `${path}/personnel`
 export  const  UserManagement:RouteConfig[] = [
 	{
 		name: "UserManagement",

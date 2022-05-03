@@ -24,9 +24,21 @@ export const AppModel = types
 		}
 	})
 	.actions(self => ({
-			
 			setMenuList(menuList: string) {
-				self.menuList = menuList;
+				let menuObj:Array<string> = JSON.parse(menuList)
+				for (const string of menuObj) {
+					// @ts-ignore
+					for (const routesObjElement of (string?.routes || [])) {
+						let routesObj:Array<string> = routesObjElement.routes || [];
+						routesObj.forEach((e,index)=>{
+							// @ts-ignore
+							if(e?.hideInMenu ===true){
+								routesObj.splice(index, 1)
+							}
+						})
+					}
+				}
+				self.menuList = JSON.stringify(menuObj || '[]');
 			},
 			setTabsList(list: string[]) {
 				const tabsMeta: string = JSON.stringify(list);

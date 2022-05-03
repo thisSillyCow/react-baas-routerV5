@@ -1,20 +1,17 @@
 /**
  * @Author: ZH
- * @createdTime: 2021-12-2021/12/21 10:27
- * @description:用户列表
+ * @createdTime: 2022-05-2022/5/2 22:55
+ * @description:采集用户信息
  */
-
 import React from 'react'
-import Search from "@/components/search/search";
+import Search from "@/components/search/search"
 import {Table} from "antd";
 import PaginationPage from "@/components/custom/custom-pagination";
 import {tData} from "@/type/page/business/information/information";
 import {tableList} from "@/type/components/custom-function";
 import TableAction from "@/components/custom/table-action";
-import {dataTemporary} from "@/lib/temporary";
-import {userListState} from "@/type/page/business/user-management/user-list";
-
-export default class index extends React.Component<any, userListState> {
+import {collectState} from "@/type/page/business/information/collect-list";
+export default class index extends React.Component<any, collectState> {
 	public constructor(props: any) {
 		super(props);
 		this.state = {
@@ -23,13 +20,42 @@ export default class index extends React.Component<any, userListState> {
 				bName: "",
 				sName: "",
 			},
-			data: dataTemporary,
+			data: [
+				{
+					key: 1,
+					name: 'John Brown',
+					age: 13532131328,
+					address: 'New York No. 1 Lake Park',
+					description: 'My name is John Brown, I am 32 years old, living in New York No. 1 Lake Park.',
+				},
+				{
+					key: 2,
+					name: 'Jim Green',
+					age: 13532131328,
+					address: 'London No. 1 Lake Park',
+					description: 'My name is Jim Green, I am 42 years old, living in London No. 1 Lake Park.',
+				},
+				{
+					key: 3,
+					name: 'Not Expandable',
+					age: 13532131328,
+					address: 'Jiangsu No. 1 Lake Park',
+					description: 'This not expandable',
+				},
+				{
+					key: 4,
+					name: 'Joe Black',
+					age: 13532131328,
+					address: 'Sidney No. 1 Lake Park',
+					description: 'My name is Joe Black, I am 32 years old, living in Sidney No. 1 Lake Park.',
+				},
+			],
 			columns: [
 				{title: 'Id', dataIndex: 'key', key: 'Id'},
-				{title: '用户名称', dataIndex: 'name', key: 'name'},
-				{title: '公司名称', dataIndex: 'name', key: 'name'},
+				{title: '用户名', dataIndex: 'name', key: 'name'},
 				{title: '联系方式', dataIndex: 'age', key: 'age'},
-				{title: '创建时间', dataIndex: 'time', key: 'time'},
+				{title: '采集时间', dataIndex: 'address', key: 'address'},
+				{title: '备注', dataIndex: 'address', key: 'address'},
 				{
 					title: '操作',
 					dataIndex: '',
@@ -66,7 +92,7 @@ export default class index extends React.Component<any, userListState> {
 	
 	}
 	public search(e: any): void {
-		// console.log(e)
+		console.log(e)
 	}
 	public  addInformation():void{
 		// this.props.history.push({pathname: "/business/information/brand-list"});
@@ -76,7 +102,7 @@ export default class index extends React.Component<any, userListState> {
 		return (
 			<div className="section-content">
 				<div className="search-input">
-					<Search searchType={"userList"} search={this.search.bind(this)} searchAdd={this.addInformation.bind(this)}/>
+					<Search searchType={"collect"} search={this.search.bind(this)} searchAdd={this.addInformation.bind(this)}/>
 				</div>
 				<div className="search-content">
 					<Table
@@ -90,4 +116,3 @@ export default class index extends React.Component<any, userListState> {
 		);
 	}
 }
-

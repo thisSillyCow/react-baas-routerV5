@@ -1,9 +1,8 @@
 /**
  * @Author: ZH
- * @createdTime: 2021-12-2021/12/21 10:27
- * @description:用户列表
+ * @createdTime: 2022-05-2022/5/2 23:19
+ * @description:分类信息
  */
-
 import React from 'react'
 import Search from "@/components/search/search";
 import {Table} from "antd";
@@ -11,10 +10,10 @@ import PaginationPage from "@/components/custom/custom-pagination";
 import {tData} from "@/type/page/business/information/information";
 import {tableList} from "@/type/components/custom-function";
 import TableAction from "@/components/custom/table-action";
+import {classifiedState} from "@/type/page/business/information/classified-info";
 import {dataTemporary} from "@/lib/temporary";
-import {userListState} from "@/type/page/business/user-management/user-list";
 
-export default class index extends React.Component<any, userListState> {
+export default class classifiedInfo extends React.Component<any, classifiedState> {
 	public constructor(props: any) {
 		super(props);
 		this.state = {
@@ -26,7 +25,7 @@ export default class index extends React.Component<any, userListState> {
 			data: dataTemporary,
 			columns: [
 				{title: 'Id', dataIndex: 'key', key: 'Id'},
-				{title: '用户名称', dataIndex: 'name', key: 'name'},
+				{title: '分类名称', dataIndex: 'name', key: 'name'},
 				{title: '公司名称', dataIndex: 'name', key: 'name'},
 				{title: '联系方式', dataIndex: 'age', key: 'age'},
 				{title: '创建时间', dataIndex: 'time', key: 'time'},
@@ -58,12 +57,10 @@ export default class index extends React.Component<any, userListState> {
 		}
 	}
 	
-	public componentDidMount(): void {
-	
+	public componentDidMount():void {
 	}
 	
-	public componentWillUnmount(): void {
-	
+	public  componentWillUnmount():void {
 	}
 	public search(e: any): void {
 		// console.log(e)
@@ -76,7 +73,7 @@ export default class index extends React.Component<any, userListState> {
 		return (
 			<div className="section-content">
 				<div className="search-input">
-					<Search searchType={"userList"} search={this.search.bind(this)} searchAdd={this.addInformation.bind(this)}/>
+					<Search searchType={"classified"} search={this.search.bind(this)} searchAdd={this.addInformation.bind(this)}/>
 				</div>
 				<div className="search-content">
 					<Table
@@ -90,4 +87,3 @@ export default class index extends React.Component<any, userListState> {
 		);
 	}
 }
-

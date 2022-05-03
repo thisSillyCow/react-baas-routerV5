@@ -51,14 +51,14 @@ class SideMenu extends React.Component<sProps, sState> {
 							const parentName: string = item.name || "";
 							const parentTitle: string = item.meta.title || "";
 							return (
-								<SubMenu key={item.name} icon={<MailOutlined/>} title={parentTitle}>
+								<SubMenu key={item.name}  title={parentTitle}>
 									{
-										childMenuList.map((cItem) => {
-											cItem.parentName = parentName;
-											cItem.parentTitle = parentTitle;
+										childMenuList.map((items) => {
+											items.parentName = parentName;
+											items.parentTitle = parentTitle;
 											return (
-												<Menu.Item key={cItem.name}
-												           onClick={() => this.props?.onTabClick(cItem)}>{cItem.meta.title}</Menu.Item>
+												<Menu.Item key={items.name}
+												           onClick={() => this.props?.onTabClick(items)}>{items.meta.title}</Menu.Item>
 											)
 										})
 									}

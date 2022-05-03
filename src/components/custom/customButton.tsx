@@ -6,11 +6,11 @@
 
 import React from 'react'
 import {Input, Button} from 'antd';
-import {SearchOutlined, DownloadOutlined, SyncOutlined} from '@ant-design/icons';
+import {SearchOutlined, DownloadOutlined, SyncOutlined,PlusOutlined} from '@ant-design/icons';
 import emitter from "@/lib/events"
 import EventEmitter from "events";
 import {withRouter} from 'react-router-dom'
-import {ButtonProps, dSearch, ButtonState, } from "@/type/components/customInput"
+import {ButtonProps, dSearch, ButtonState, } from "@/type/components/custom-function"
 import {EventReset, } from "@/lib/local"
 import "./index.less"
 
@@ -38,6 +38,7 @@ class CustomButton extends React.Component<ButtonProps, ButtonState> {
 		this.eventEmitter && emitter?.removeListener(EventReset,this.disposeReset);
 	}
 	public disposeReset(rMsg:string): void {
+		console.log(rMsg)
 		const {pathName, searchInfo: sInfo} = this.state
 		const sObj:dSearch = JSON.parse(rMsg)
 		const pName = sObj?.pathname;
@@ -67,11 +68,13 @@ class CustomButton extends React.Component<ButtonProps, ButtonState> {
 	render() {
 		const {placeType,} = this.props
 		return (
-			<div className="custom-input">
+			<div className="custom-buttom">
 				{placeType === "search" &&
-                    <Button type="primary" icon={<SearchOutlined/>} onClick={this.search.bind(this)}>查询</Button>}
+                    <Button type="primary" className="search-button" icon={<SearchOutlined/>} onClick={this.search.bind(this)}>查询</Button>}
 				{placeType === "reset" &&
-                    <Button icon={<SyncOutlined/>} onClick={this.resetSearch.bind(this)}>重置</Button>}
+                    <Button icon={<SyncOutlined/>} onClick={this.search.bind(this)}>重置</Button>}
+				{placeType === "add" &&
+                    <Button type="primary" className="add-button" icon={<PlusOutlined/>} onClick={this.search.bind(this)}>新增</Button>}
 				{placeType === "download" && <Button type="primary" danger icon={<DownloadOutlined/>}
                                                      onClick={this.openDownload.bind(this)}>导出</Button>}
 			</div>
