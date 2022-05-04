@@ -247,6 +247,9 @@ export default class search extends React.Component<searchProps, searchState> {
 			</div>
 		)
 	}
+	public searchAdd():JSX.Element{
+		return  <CustomButton placeType="add" search={this.customAdd.bind(this)}/>
+	}
 	render() {
 		const {searchType} = this.props
 		return (
@@ -257,7 +260,7 @@ export default class search extends React.Component<searchProps, searchState> {
 				{(searchType === "consult" || searchType === "classified"||searchType === "userPractice" ||searchType === "userList" ||searchType === "journalism") && this.searchClassified()}
 				<CustomButton placeType="search" search={this.customSearch.bind(this)}/>
 				<CustomButton placeType="reset" search={this.customReset.bind(this)}/>
-				<CustomButton placeType="add" search={this.customAdd.bind(this)}/>
+				{ (searchType !== "collect" && searchType !== "userList") && this.searchAdd()}
 			</div>
 		);
 	}

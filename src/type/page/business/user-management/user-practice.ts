@@ -5,17 +5,24 @@
  */
 import {ColumnsType} from "antd/es/table";
 import {TableProps} from "antd";
+import {ModalDetails} from "@/type";
 
 
 export  interface userPracticeState {
+	modalDetails:ModalDetails,
 	searchInfo:SInfo,
 	columns:ColumnsType<tColumns>,
 	data:TableProps<tData> |any,
+	operateList:Array<cList>;
 }
 interface SInfo {
 	cName:string,
 	bName:string,
 	sName:string,
+}
+interface cList {
+	id:number;
+	companyName:string;
 }
 interface tColumns {
 	title:string;

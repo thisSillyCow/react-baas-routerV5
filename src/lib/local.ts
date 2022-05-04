@@ -32,6 +32,8 @@ export enum ModalInfo {
 	CANCEL_NAME = "取消",
 	CONFIRM_NAME = "确定",
 	MODAL_TITLE = "温馨提示",
+	ADD_TITLE = "新增",
+MODAL_WIDTH=520,
 }
 
 export const BusinessName: BUSINESS_NAME = {

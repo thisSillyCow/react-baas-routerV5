@@ -5,12 +5,22 @@
  */
 import {ColumnsType} from "antd/es/table";
 import {TableProps} from "antd";
+import {ModalDetails} from "@/type";
 
 
 export  interface classifiedState {
+	loading:boolean;
+	editor:string;
+	modalDetails:ModalDetails,
 	searchInfo:SInfo,
 	columns:ColumnsType<tColumns>,
 	data:TableProps<tData> |any,
+	editorAboutUsContent: string | void;
+	companyList: Array<cList>;
+}
+interface cList {
+	id:number;
+	companyName:string;
 }
 interface SInfo {
 	cName:string,

@@ -5,17 +5,26 @@
  */
 import {ColumnsType} from "antd/es/table";
 import {TableProps} from "antd";
+import {ModalDetails} from "@/type";
 
 
 export  interface consultState {
+	modalDetails:ModalDetails,
 	searchInfo:SInfo,
 	columns:ColumnsType<tColumns>,
 	data:TableProps<tData> |any,
+	companyList: Array<cList>;
+	editorAboutUsContent: string | void;
+	editor:string;
 }
 interface SInfo {
 	cName:string,
 	bName:string,
 	sName:string,
+}
+interface cList {
+	id:number;
+	companyName:string;
 }
 interface tColumns {
 	title:string;

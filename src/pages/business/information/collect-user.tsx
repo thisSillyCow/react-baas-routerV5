@@ -7,7 +7,7 @@ import React from 'react'
 import Search from "@/components/search/search"
 import {Table} from "antd";
 import PaginationPage from "@/components/custom/custom-pagination";
-import {tData} from "@/type/page/business/information/information";
+import {tData} from "@/type/page/business/information/company-list";
 import {tableList} from "@/type/components/custom-function";
 import TableAction from "@/components/custom/table-action";
 import {collectState} from "@/type/page/business/information/collect-list";

@@ -25,14 +25,22 @@ export interface tData{
 	stateMsg:string;
 }
 export interface  CompanyState {
+	options:Array<object>;
 	seconds: number,
 	searchInfo:SInfo,
 	modalDetails:ModalDetails,
 	columns:ColumnsType<tColumns>,
 	data:TableProps<tData> |any,
+	editorAboutUsContent: string | void;
+	loading:boolean;
 }
 
 export  interface CompanyProps  extends  RouteComponentProps<any>  {
 	count:string,
 	increase:Function,
+}
+
+export interface modalState {
+	oType:string;
+	mId?:number;
 }

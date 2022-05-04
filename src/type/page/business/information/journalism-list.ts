@@ -5,12 +5,21 @@
  */
 import {ColumnsType} from "antd/es/table";
 import {TableProps} from "antd";
+import {ModalDetails} from "@/type";
 
 
 export  interface journalismState {
+	modalDetails:ModalDetails,
 	searchInfo:SInfo,
 	columns:ColumnsType<tColumns>,
 	data:TableProps<tData> |any,
+	companyList: Array<cList>;
+	editorAboutUsContent: string | void;
+	editor:string;
+}
+interface cList {
+	id:number;
+	companyName:string;
 }
 interface SInfo {
 	cName:string,

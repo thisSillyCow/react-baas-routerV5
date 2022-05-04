@@ -33,7 +33,6 @@ export default class tableAction extends React.Component<tableProps, tableState>
 			dropState,
 			dropList,
 		})
-		
 	}
 	
 	public componentWillUnmount(): void {

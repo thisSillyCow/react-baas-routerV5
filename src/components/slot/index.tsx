@@ -41,6 +41,7 @@ export default class index extends React.Component<SlotProps, any> {
 		const {detailsSlot,modalDetails} = this.props
 		return (
 			<Modal
+				width={modalDetails.modalWidth}
 				visible={modalDetails.modalVisible}
 				title={modalDetails.modalTitle || ModalInfo.MODAL_TITLE}
 				onCancel={e=>this.handleCancel()}

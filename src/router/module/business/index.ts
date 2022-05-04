@@ -41,7 +41,7 @@ export const Business: RouteConfig[] = [
 			icon: "userManagement-icon.png",
 		},
 		routes: [
-			...Home,
+			// ...Home,
 			...Information,
 			...UserManagement,
 			// ...Commerce,
