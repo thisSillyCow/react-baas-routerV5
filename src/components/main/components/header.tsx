@@ -150,20 +150,6 @@ class Headers extends React.Component<hProps, hState> {
 				</div>
 				
 				<div className="user-info">
-					{/*<Select value={suffixName} bordered={false}*/}
-					{/*        suffixIcon={suffixType ? <CaretUpOutlined/> : <CaretDownOutlined/>}*/}
-					{/*        onClick={() => this.suffixState()}*/}
-					{/*        onChange={(e) => this.props.onSuffixChange(e)}*/}
-					{/*        onBlur={() => this.suffixState(false)}*/}
-					{/*>*/}
-					{/*	{*/}
-					{/*		headlineList?.map((item, index) => {*/}
-					{/*			const routeName = item.name || "";*/}
-					{/*			const titleName = item.meta.title || "";*/}
-					{/*			return (<Option value={routeName} key={index}>{titleName}</Option>)*/}
-					{/*		})*/}
-					{/*	}*/}
-					{/*</Select>*/}
 					<Dropdown overlay={this.menuList.bind(this)}>
 						<div>用户信息存放处<DownOutlined/></div>
 					</Dropdown>

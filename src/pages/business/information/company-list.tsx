@@ -1,5 +1,4 @@
 import React from 'react'
-import {inject} from 'mobx-react';
 import {Button, Select, Table, Descriptions, Input, Cascader, Upload} from 'antd';
 
 const {Option} = Select;
@@ -17,12 +16,7 @@ import {editorConfig, ModalInfo} from "@/lib/local";
 import Util from "@/lib/util";
 import E from "wangeditor";
 import {LoadingOutlined, PlusOutlined} from "@ant-design/icons";
-@inject(({store}) => (
-	{
-		count: store.count,
-		increase: store.increase,
-	}
-))
+
 export default class index extends React.Component<CompanyProps, CompanyState> {
 	constructor(props: CompanyProps) {
 		super(props);
@@ -144,7 +138,6 @@ export default class index extends React.Component<CompanyProps, CompanyState> {
 	}
 	
 	public onIncrease(): void {
-		this.props?.increase();
 	}
 	
 	public openMode(): void {
@@ -268,7 +261,6 @@ export default class index extends React.Component<CompanyProps, CompanyState> {
 	}
 	render () {
 		const {modalDetails, columns, data ,} = this.state;
-		const {count} = this.props;
 		return (
 			<div className="section-content">
 				<div className="search-input">

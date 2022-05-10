@@ -4,8 +4,8 @@ export const EventSearch: string = "searchMsg";
 export const EventReset: string = "resetMsg";
 export const ProjectName: string = "/baas-api/";
 export const CompanyInfo: COMPANY_INFO = {
-	name: "深圳创链数据科技有限公司",
-	encoding: "Copyright © www.innochain.tech, All Rights Reserved.",
+	name: "深圳市恒昌惠实业有限公司",
+	encoding: "礐ICP备2022027889号 Copyright © www.xiaoduy.com, All Rights Reserved.",
 }
 export const SearchList = {
 	dateFormatList: ['YYYY-MM-DD', 'YYYY-MM-DD']

@@ -1,6 +1,7 @@
 import {types, Instance,} from 'mobx-state-tree';
 import {AppModelName} from "@/lib/local"
 import Util from "@/lib/util"
+import {TabsMeta} from "@/type/components/main";
 
 export const AppModel = types
 	.model('AppModel', {
@@ -11,8 +12,11 @@ export const AppModel = types
 	.views(self => {
 		return {
 			get getTabsList() {
-				let tabsMeta : string= self.tabsList || Util.localRead(AppModelName.tabsName) || "[]";
-				return JSON.parse(tabsMeta );
+				let tabsMeta : string= self.tabsList || Util.localRead(AppModelName.tabsName) ;
+				if(tabsMeta === "undefined" || tabsMeta === "" || !tabsMeta){
+					tabsMeta="[]"
+				}
+				return JSON.parse(tabsMeta);
 			},
 			get getMenuList() {
 				return self.menuList || "{}";
@@ -40,12 +44,12 @@ export const AppModel = types
 				}
 				self.menuList = JSON.stringify(menuObj || '[]');
 			},
-			setTabsList(list: string[]) {
+			setTabsList(list: Array<TabsMeta>) {
 				const tabsMeta: string = JSON.stringify(list);
 				Util.localSave(AppModelName.tabsName, tabsMeta);
 				self.tabsList = tabsMeta;
 			},
-			setSideMenu(sideList:string[]){
+			setSideMenu(sideList:object){
 				const sideMenu: string = JSON.stringify(sideList);
 				Util.localSave(AppModelName.sideSelected, sideMenu);
 				self.sideMenu = sideMenu;

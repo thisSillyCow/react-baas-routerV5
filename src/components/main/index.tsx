@@ -1,27 +1,14 @@
 import React from 'react'
 import {renderRoutes, RouteConfig,} from 'react-router-config';
 import {MainContext} from "@/hooks"
-import {inject} from 'mobx-react';
 import Headers from "./components/header"
 import SideMenu from "./components/side-menu"
 import "@/styles/components/mian.less"
 import {Layout, Tabs} from 'antd';
 const {Content,} = Layout;
-const {TabPane} = Tabs;
 import {MainProps, MainState, TabsMeta} from "@/type/components/main";
-
-@inject(({store}) => (
-	{
-		setTabsList: store.AppInfo.setTabsList,
-		setSideMenu: store.AppInfo.setSideMenu,
-		getTabsList: store.AppInfo.getTabsList,
-		getSideMenu: store.AppInfo.getSideMenu,
-		menuList: store.AppInfo.getMenuList,
-	}
-))
-
-
-export default class Main extends React.Component<MainProps, MainState> {
+import store from "@/stores/index"
+export default class index extends React.Component<MainProps, MainState> {
 	public constructor(props: MainProps) {
 		super(props);
 		this.state = {
@@ -43,7 +30,7 @@ export default class Main extends React.Component<MainProps, MainState> {
 	}
 	
 	public componentDidMount(): void {
-		const tabsList = this.props.getTabsList;
+		const tabsList = store.AppInfo.getTabsList;
 		const getPath = this.props.route?.name || "";
 		if (tabsList.length != 0) {
 			this.setState({
@@ -55,8 +42,8 @@ export default class Main extends React.Component<MainProps, MainState> {
 	
 	
 	public initSideMenu(getPath: string): void {
-		const sideMenuObj = this.props.getSideMenu;
-		const menuList = this.props.menuList || "[]"
+		const sideMenuObj = store.AppInfo.getSideMenu;
+		const menuList = store.AppInfo.menuList || "[]"
 		let menuTem: RouteConfig[] | undefined = [];
 		let menuObj: RouteConfig[] = JSON.parse(menuList);
 		for (const moduleKey of menuObj) {
@@ -69,7 +56,6 @@ export default class Main extends React.Component<MainProps, MainState> {
 				}
 			}
 		}
-		console.log("getPath: " + getPath)
 		sideMenuObj.suffixName = getPath;
 		this.setState({
 			menuList: menuTem,
@@ -106,8 +92,8 @@ export default class Main extends React.Component<MainProps, MainState> {
 		const pathName = e.pathName
 		const parentName = e.parentName || ""
 		const sideMenuObj = {openKeys: [parentName], selectedKey: [activeKey], activeMenu: e, suffixName}
-		this.props?.setTabsList(tabsList)
-		this.props?.setSideMenu(sideMenuObj);
+		store.AppInfo.setTabsList(tabsList)
+		store.AppInfo.setSideMenu(sideMenuObj);
 		this.setState({
 			tabsList,
 			activeSideMenu: sideMenuObj,
@@ -198,20 +184,9 @@ export default class Main extends React.Component<MainProps, MainState> {
 						<Headers {...this.props} history={this.props.history} onToggle={this.toggle.bind(this)}
 						         onSuffixChange={(e: string) => this.initSideMenu(e)}/>
 						<Content className="site-layout-background" >
-							{/*<Tabs hideAdd tabPosition="top" type="editable-card"*/}
-							{/*      activeKey={activeSideMenu.selectedKey[0]}*/}
-							{/*      onEdit={(targetKey, action) => this.onEditTabs(targetKey, action)}*/}
-							{/*      onChange={(e) => this.onTabsClick(e)}>*/}
-							{/*	{tabsList.map((item: TabsMeta, index: number) => {*/}
-							{/*		return (*/}
-							{/*			<TabPane tab={item.title} key={item.name} closable={index != 0}>*/}
-							{/*			</TabPane>*/}
-							{/*		)*/}
-							{/*	})}*/}
-							{/*</Tabs>*/}
-								<div className="content-render">
-									{renderRoutes(route.routes)}
-								</div>
+							<div className="content-render">
+								{renderRoutes(route.routes)}
+							</div>
 						</Content>
 					</Layout>
 				</Layout>

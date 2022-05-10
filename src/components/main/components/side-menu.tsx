@@ -6,7 +6,6 @@
 import React from 'react'
 import {Layout, Menu} from 'antd';
 import {RouteConfig} from "react-router-config";
-import {MailOutlined,} from '@ant-design/icons';
 import {MainContext} from "@/hooks";
 import {sProps, sState} from "@/type/components/main/side-menu";
 import "@/styles/components/mian.less"

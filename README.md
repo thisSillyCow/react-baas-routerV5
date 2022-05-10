@@ -35,6 +35,8 @@ https://github.com/lanistor/react-keeper
 5、演示服务器地址
 `/data/apps/baas/`
 
+6、vite 的压缩插件 :http://www.guofeian.cn/article_details/627119241669390336
+`vite-plugin-compression：https://github.com/anncwb/vite-plugin-compression`
 #### 前端代码规范
 - 文件、文件夹、目录结构、组建、变量等等怎么命名
 - html、css、less等如何规范

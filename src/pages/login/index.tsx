@@ -4,6 +4,7 @@ import "./index.less"
 import LoginFooterPic from "@/assets/images/login-footer.png"
 import LoginUserPic from "@/assets/images/login-user.png"
 import LogoHeadPic from "@/assets/images/logo_head.png"
+import logoBag from "@/assets/images/logo-bag.jpeg"
 import {CompanyInfo, UserVerify} from "@/lib/local"
 import LoginApi from "@/api/login"
 import {LoginState} from "@/type/page/login"
@@ -61,7 +62,7 @@ class Login extends React.Component<any, LoginState> {
 		this.setState({
 			loading:!loading,
 		})
-		this.props.history.push({pathname: "/business/home"});
+		this.props.history.push({pathname: "/business/information/company-list"});
 	}
 	public LoginPage(): ReactNode {
 		let {loginPwd, accounts, code,loading,vCode,} = this.state
@@ -97,12 +98,14 @@ class Login extends React.Component<any, LoginState> {
 	render() {
 		return (
 			<div className="login">
-				<img src={LoginFooterPic} className="ax-footer" alt=""/>
+				<img src={logoBag} className="content-bag" alt=""/>
+				{/*<img src={LoginFooterPic} className="ax-footer" alt=""/>*/}
 				<div className="login-content">
+					
 					<div className="login">
-						<div className="content-log">
-							<img src={LoginUserPic} className="content-login" alt=""/>
-						</div>
+						{/*<div className="content-log">*/}
+						{/*	<img src={LoginUserPic} className="content-login" alt=""/>*/}
+						{/*</div>*/}
 						<div className="content-log">
 							{this.LoginPage()}
 						</div>

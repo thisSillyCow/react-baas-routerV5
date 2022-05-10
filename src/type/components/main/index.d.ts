@@ -1,6 +1,6 @@
 import {RouteConfig} from "react-router-config";
 
-export interface MainProps {
+export interface MainProps  {
 	route?: RouteConfig | any,
 	history?: RouteConfig | any,
 	menuList: string | undefined,
